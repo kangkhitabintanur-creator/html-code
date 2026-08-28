@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Kangkhita Flower Garden - Rangpur</title>
+    <!-- CSS Link matching your VS Code folder structure -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo">
+            <i class="fas fa-seedling"></i> FLOWER <span>GARDEN</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#bouquets">Products</a></li>
+                <li><a href="#booking">Booking</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="#booking" class="nav-btn">Live Booking</a>
+    </header>
+
+    <!-- Hero Banner Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-overlay">
+            <h1>KANGKHITA FLOWER GARDEN</h1>
+            <p>Combined background patterns we offer for all fresh flowers</p>
+            <a href="#booking" class="btn-primary">Live Booking</a>
+        </div>
+    </section>
+
+    <!-- Handpicked Bouquets / Product Grid -->
+    <section id="bouquets" class="products-container">
+        <h2 class="section-title">OUR HANDPICKED BOUQUETS</h2>
+        <p class="section-subtitle">ছবিতে ক্লিক করে মূল্য ও বিস্তারিত তথ্য দেখে সহজেই অর্ডার করুন</p>
+        
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card" onclick="openDetails('Wild Mixed Meadow', '৳১২৫০', '১৮টি তাজা মিশ্র ফুল', ['Dahlia', 'Scabiosa', 'Wild White Carnation'], 'img/pexels-lu-106872-783413.jpg')">
+                <div class="img-box">
+                    <img src="img/pexels-lu-106872-783413.jpg" alt="Wild Mixed Meadow">
+                </div>
+                <h3>Wild Mixed Meadow</h3>
+                <span class="price-tag">৳১২৫০</span>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card" onclick="openDetails('Pink Carnation Special', '৳৯৫০', '১৫টি গোলাপি তাজা কার্নেশন', ['Pink Carnation', 'White Alstroemeria'], 'img/pexels-tatiana-137432171-11154781.jpg')">
+                <div class="img-box">
+                    <img src="img/pexels-tatiana-137432171-11154781.jpg" alt="Pink Carnation">
+                </div>
+                <h3>Pink Carnation Special</h3>
+                <span class="price-tag">৳৯৫০</span>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card" onclick="openDetails('White Water Lily Vase', '৳১৪০০', '২০টি রয়াল ওয়াটার লিলি', ['White Water Lily', 'Decorative Stem'], 'img/pexels-ivy-nguyen-9041196-36662825.jpg')">
+                <div class="img-box">
+                    <img src="img/pexels-ivy-nguyen-9041196-36662825.jpg" alt="White Water Lily">
+                </div>
+                <h3>White Water Lily Vase</h3>
+                <span class="price-tag">৳১৪০০</span>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card" onclick="openDetails('Spring Meadow Mix', '৳১১০০', '২৫টি হরেক রঙের টিউলিপ ও কিউট ফুল', ['Mini Tulip', 'Spring Wild Flowers'], 'img/pexels-irrabagon-36470893.jpg')">
+                <div class="img-box">
+                    <img src="img/pexels-irrabagon-36470893.jpg" alt="Spring Meadow Mix">
+                </div>
+                <h3>Spring Meadow Mix</h3>
+                <span class="price-tag">৳১১০০</span>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card" onclick="openDetails('Pink & Red Gerbera Cluster', '৳১৩৫০', '২২টি জেরবেরা ও ডালিয়া', ['Red Gerbera', 'Pink Gerbera'], 'img/pexels-daka-12028905.jpg')">
+                <div class="img-box">
+                    <img src="img/pexels-daka-12028905.jpg" alt="Gerbera Cluster">
+                </div>
+                <h3>Gerbera Bouquet</h3>
+                <span class="price-tag">৳১৩৫০</span>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card" onclick="openDetails('Royal Pink Rose Bouquet', '৳১৬০০', '২৪টি প্রিমিয়াম পিঙ্ক রোজ', ['Pink Peony Rose', 'Fresh Leaves'], 'img/rikonavt-oEWdQsbRVZk-unsplash (1).jpg')">
+                <div class="img-box">
+                    <img src="img/rikonavt-oEWdQsbRVZk-unsplash (1).jpg" alt="Pink Rose Bouquet">
+                </div>
+                <h3>Royal Pink Rose</h3>
+                <span class="price-tag">৳১৬০০</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Details Modal Pop-up -->
+    <div id="detailsModal" class="modal">
+        <div class="modal-card">
+            <span class="close-btn" onclick="closeDetails()">&times;</span>
+            <div class="modal-body">
+                <img id="modalImg" src="" alt="Flower Image">
+                <div class="modal-info">
+                    <h3 id="modalTitle">Product Title</h3>
+                    <p class="modal-price" id="modalPrice">PRICE: ৳0</p>
+                    <p class="modal-count" id="modalCount">TOTAL FLOWERS: 0</p>
+                    <div class="types-box">
+                        <h4>Types Included:</h4>
+                        <ul id="modalTypes"></ul>
+                    </div>
+                    <button class="btn-primary" onclick="selectForBooking()">Order Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking System Section -->
+    <section id="booking" class="booking-section">
+        <h2 class="section-title">BOOKING SYSTEM</h2>
+        <div class="booking-container">
+            <form id="bookingForm" onsubmit="handleOrderSubmit(event)" class="booking-form">
+                <input type="text" id="custName" placeholder="Your Name" required>
+                <input type="text" id="custAddress" placeholder="Delivery Address (Rangpur)" required>
+                <div class="form-row">
+                    <input type="tel" id="custPhone" placeholder="Phone Number" required>
+                    <input type="date" id="deliveryDate" required>
+                </div>
+                <input type="text" id="selectedFlower" placeholder="Selected Bouquet Name" required readonly>
+                <button type="submit" class="btn-primary form-submit-btn">Send Booking Order</button>
+            </form>
+            
+            <div class="map-box">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marker-alt map-pin"></i>
+                    <h4>Rangpur Branch</h4>
+                    <p>ধাপ, জেল রোড, রংপুর</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>About Us</h3>
+                <p>আমরা রংপুরে সেরা তাজা ও ইম্পোর্টেড ফুলের হোম ডেলিভারি দিয়ে থাকি। বিশেষ দিনের বিশেষ উপহার পাঠাতে কল করুন।</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Social Media</h3>
+                <a href="https://facebook.com" target="_blank" class="fb-live-btn">
+                    <i class="fab fa-facebook-square"></i> Facebook Live
+                </a>
+            </div>
+
+            <div class="footer-col">
+                <h3>Rangpur Branch</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Rangpur Branch, Bangladesh</p>
+                <p><i class="fas fa-phone-alt"></i> +880 1700-000000</p>
+                <p><i class="fas fa-envelope"></i> info@flowergarden.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Designed for Flower Garden Rangpur Branch</p>
+        </div>
+    </footer>
+
+    <!-- JS Link matching your VS Code folder structure -->
+    <script src="js/script.js"></script>
+</body>
+</html>
