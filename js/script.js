@@ -1,57 +1,78 @@
-let currentSelectedBouquet = "";
-
-// Function to open Modal with image and dynamic details
-function openDetails(title, price, flowerCount, typesArray, imagePath) {
-    currentSelectedBouquet = title;
+document.addEventListener("DOMContentLoaded", () => {
     
-    document.getElementById('modalTitle').innerText = title;
-    document.getElementById('modalPrice').innerText = "PRICE: " + price;
-    document.getElementById('modalCount').innerText = "TOTAL FLOWERS: " + flowerCount;
-    document.getElementById('modalImg').src = imagePath;
+    // ১. টাইপরাইটার অ্যানিমেশন (Typewriter Effect)
+    const typingElement = document.getElementById('typing-text');
+    if (typingElement) {
+        const textArray = [
+            "Web Designer & Front-End Developer",
+            "UI/UX Design Enthusiast",
+            "Creative Web Developer"
+        ];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
 
-    const typesList = document.getElementById('modalTypes');
-    typesList.innerHTML = '';
-    
-    typesArray.forEach(type => {
-        const li = document.createElement('li');
-        li.innerText = type;
-        typesList.appendChild(li);
+        function type() {
+            const currentText = textArray[textIndex];
+            
+            if (isDeleting) {
+                typingElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            typingElement.classList.add('type-cursor');
+
+            let typeSpeed = isDeleting ? 40 : 80;
+
+            if (!isDeleting && charIndex === currentText.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % textArray.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        type();
+    }
+
+    // ২. স্মুথ স্ক্রোলিং ও নেভবার অ্যাক্টিভ ট্র্যাকিং
+    const allLinks = document.querySelectorAll('a[href^="#"]');
+
+    allLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href && href !== '#') {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
     });
 
-    document.getElementById('detailsModal').style.display = 'flex';
-}
+    // ৩. স্মুথ স্ক্রোল রিভিল অ্যানিমেশন (Scroll Reveal Effect)
+    const revealElements = document.querySelectorAll('.card, .project-card, .tool-item, .stat-card, .step, h2, h3');
 
-// Function to close modal
-function closeDetails() {
-    document.getElementById('detailsModal').style.display = 'none';
-}
+    revealElements.forEach(el => el.classList.add('reveal'));
 
-// Auto select flower for booking form when clicked "Order Now" from modal
-function selectForBooking() {
-    closeDetails();
-    const bookingInput = document.getElementById('selectedFlower');
-    bookingInput.value = currentSelectedBouquet;
-    
-    // Smooth scroll to booking form
-    document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
-}
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1 });
 
-// Form Submission Alert Handling
-function handleOrderSubmit(event) {
-    event.preventDefault();
-    
-    const name = document.getElementById('custName').value;
-    const flower = document.getElementById('selectedFlower').value || "Bouquet Choice";
-    
-    alert(`ধন্যবাদ ${name}! \nআপনার "${flower}" বুকিং রিকোয়েস্টটি Flower Garden (রংপুর শাখা)-এ নিবন্ধিত হয়েছে। আমরা শীঘ্রই যোগাযোগের মাধ্যমে কাস্টমাইজেশন নিশ্চিত করবো।`);
-    
-    document.getElementById('bookingForm').reset();
-}
-
-// Close Modal when clicking outside container
-window.onclick = function(event) {
-    const modal = document.getElementById('detailsModal');
-    if (event.target === modal) {
-        closeDetails();
-    }
-}
+    revealElements.forEach(el => observer.observe(el));
+});

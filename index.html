@@ -1,178 +1,230 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Kangkhita Flower Garden - Rangpur</title>
-    <!-- CSS Link matching your VS Code folder structure -->
+    <title>KBN | Kangkhita Binta Nur</title>
     <link rel="stylesheet" href="css/style.css">
-    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Reenie+Beanie&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Header Navigation -->
-    <header>
-        <div class="logo">
-            <i class="fas fa-seedling"></i> FLOWER <span>GARDEN</span>
+    <!-- Nav -->
+    <nav class="navbar">
+        <a href="#home" class="logo">KBN</a>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#bouquets">Products</a></li>
-                <li><a href="#booking">Booking</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <a href="#booking" class="nav-btn">Live Booking</a>
-    </header>
+        <a href="#contact" class="btn btn-gold">Let's Work Together <i class="fa-solid fa-arrow-right"></i></a>
+    </nav>
 
-    <!-- Hero Banner Section -->
-    <section id="home" class="hero-section">
-        <div class="hero-overlay">
-            <h1>KANGKHITA FLOWER GARDEN</h1>
-            <p>Combined background patterns we offer for all fresh flowers</p>
-            <a href="#booking" class="btn-primary">Live Booking</a>
-        </div>
-    </section>
-
-    <!-- Handpicked Bouquets / Product Grid -->
-    <section id="bouquets" class="products-container">
-        <h2 class="section-title">OUR HANDPICKED BOUQUETS</h2>
-        <p class="section-subtitle">ছবিতে ক্লিক করে মূল্য ও বিস্তারিত তথ্য দেখে সহজেই অর্ডার করুন</p>
-        
-        <div class="product-grid">
-            <!-- Product 1 -->
-            <div class="product-card" onclick="openDetails('Wild Mixed Meadow', '৳১২৫০', '১৮টি তাজা মিশ্র ফুল', ['Dahlia', 'Scabiosa', 'Wild White Carnation'], 'img/pexels-lu-106872-783413.jpg')">
-                <div class="img-box">
-                    <img src="img/pexels-lu-106872-783413.jpg" alt="Wild Mixed Meadow">
-                </div>
-                <h3>Wild Mixed Meadow</h3>
-                <span class="price-tag">৳১২৫০</span>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="product-card" onclick="openDetails('Pink Carnation Special', '৳৯৫০', '১৫টি গোলাপি তাজা কার্নেশন', ['Pink Carnation', 'White Alstroemeria'], 'img/pexels-tatiana-137432171-11154781.jpg')">
-                <div class="img-box">
-                    <img src="img/pexels-tatiana-137432171-11154781.jpg" alt="Pink Carnation">
-                </div>
-                <h3>Pink Carnation Special</h3>
-                <span class="price-tag">৳৯৫০</span>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-card" onclick="openDetails('White Water Lily Vase', '৳১৪০০', '২০টি রয়াল ওয়াটার লিলি', ['White Water Lily', 'Decorative Stem'], 'img/pexels-ivy-nguyen-9041196-36662825.jpg')">
-                <div class="img-box">
-                    <img src="img/pexels-ivy-nguyen-9041196-36662825.jpg" alt="White Water Lily">
-                </div>
-                <h3>White Water Lily Vase</h3>
-                <span class="price-tag">৳১৪০০</span>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="product-card" onclick="openDetails('Spring Meadow Mix', '৳১১০০', '২৫টি হরেক রঙের টিউলিপ ও কিউট ফুল', ['Mini Tulip', 'Spring Wild Flowers'], 'img/pexels-irrabagon-36470893.jpg')">
-                <div class="img-box">
-                    <img src="img/pexels-irrabagon-36470893.jpg" alt="Spring Meadow Mix">
-                </div>
-                <h3>Spring Meadow Mix</h3>
-                <span class="price-tag">৳১১০০</span>
-            </div>
-
-            <!-- Product 5 -->
-            <div class="product-card" onclick="openDetails('Pink & Red Gerbera Cluster', '৳১৩৫০', '২২টি জেরবেরা ও ডালিয়া', ['Red Gerbera', 'Pink Gerbera'], 'img/pexels-daka-12028905.jpg')">
-                <div class="img-box">
-                    <img src="img/pexels-daka-12028905.jpg" alt="Gerbera Cluster">
-                </div>
-                <h3>Gerbera Bouquet</h3>
-                <span class="price-tag">৳১৩৫০</span>
-            </div>
-
-            <!-- Product 6 -->
-            <div class="product-card" onclick="openDetails('Royal Pink Rose Bouquet', '৳১৬০০', '২৪টি প্রিমিয়াম পিঙ্ক রোজ', ['Pink Peony Rose', 'Fresh Leaves'], 'img/rikonavt-oEWdQsbRVZk-unsplash (1).jpg')">
-                <div class="img-box">
-                    <img src="img/rikonavt-oEWdQsbRVZk-unsplash (1).jpg" alt="Pink Rose Bouquet">
-                </div>
-                <h3>Royal Pink Rose</h3>
-                <span class="price-tag">৳১৬০০</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Product Details Modal Pop-up -->
-    <div id="detailsModal" class="modal">
-        <div class="modal-card">
-            <span class="close-btn" onclick="closeDetails()">&times;</span>
-            <div class="modal-body">
-                <img id="modalImg" src="" alt="Flower Image">
-                <div class="modal-info">
-                    <h3 id="modalTitle">Product Title</h3>
-                    <p class="modal-price" id="modalPrice">PRICE: ৳0</p>
-                    <p class="modal-count" id="modalCount">TOTAL FLOWERS: 0</p>
-                    <div class="types-box">
-                        <h4>Types Included:</h4>
-                        <ul id="modalTypes"></ul>
-                    </div>
-                    <button class="btn-primary" onclick="selectForBooking()">Order Now</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Booking System Section -->
-    <section id="booking" class="booking-section">
-        <h2 class="section-title">BOOKING SYSTEM</h2>
-        <div class="booking-container">
-            <form id="bookingForm" onsubmit="handleOrderSubmit(event)" class="booking-form">
-                <input type="text" id="custName" placeholder="Your Name" required>
-                <input type="text" id="custAddress" placeholder="Delivery Address (Rangpur)" required>
-                <div class="form-row">
-                    <input type="tel" id="custPhone" placeholder="Phone Number" required>
-                    <input type="date" id="deliveryDate" required>
-                </div>
-                <input type="text" id="selectedFlower" placeholder="Selected Bouquet Name" required readonly>
-                <button type="submit" class="btn-primary form-submit-btn">Send Booking Order</button>
-            </form>
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <div class="hero-left">
+            <span class="badge"><i class="fa-solid fa-circle pulse"></i> AVAILABLE FOR FREELANCE</span>
+            <h1>Hi, I’m <br><span class="highlight">Kangkhita Binta Nur</span></h1>
+            <h2 id="typing-text">Web Designer & Front-End Developer</h2>
+            <p>I design and build modern, responsive and user-friendly websites that help businesses build a strong online presence.</p>
             
-            <div class="map-box">
-                <div class="map-placeholder">
-                    <i class="fas fa-map-marker-alt map-pin"></i>
-                    <h4>Rangpur Branch</h4>
-                    <p>ধাপ, জেল রোড, রংপুর</p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn btn-gold">View My Work <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#contact" class="btn btn-outline">Let's Talk</a>
+            </div>
+
+            <div class="social-icons">
+                <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="mailto:contact@example.com"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <div class="hero-center">
+            <span class="script-text top-script">A Better Work<br>A Brighter You ♡</span>
+            <div class="avatar-container">
+                <img src="img/profile.jpg" alt="Kangkhita Binta Nur" class="main-avatar">
+            </div>
+            <span class="script-text bottom-script">Turning Ideas into Reality</span>
+        </div>
+
+        <div class="hero-right">
+            <div class="card feature-card">
+                <div class="laptop-icon-wrap"><i class="fa-solid fa-laptop-code"></i></div>
+                <h3>Design<br>Develop<br>Deliver</h3>
+                <ul class="feature-list">
+                    <li><i class="fa-regular fa-circle-dot"></i> Modern Design</li>
+                    <li><i class="fa-regular fa-circle-dot"></i> Clean Code</li>
+                    <li><i class="fa-regular fa-circle-dot"></i> Responsive</li>
+                    <li><i class="fa-regular fa-circle-dot"></i> User-Focused</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats-grid">
+        <div class="stat-card"><i class="fa-regular fa-folder"></i><div><h3>10+</h3><p>Projects Completed</p></div></div>
+        <div class="stat-card"><i class="fa-solid fa-users"></i><div><h3>Happy Clients</h3></div></div>
+        <div class="stat-card"><i class="fa-solid fa-graduation-cap"></i><div><h3>2+</h3><p>Years Learning</p></div></div>
+        <div class="stat-card"><i class="fa-solid fa-heart"></i><div><h3>100%</h3><p>Passion for Web</p></div></div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about-section">
+        <div class="about-left">
+            <span class="sub-title">• ABOUT ME</span>
+            <h2>Passionate about<br>Creating Digital Experiences</h2>
+            <p>I'm a passionate Web Designer and Front-End Developer focused on creating clean, responsive and visually engaging websites. I enjoy turning ideas into functional digital experiences with modern web technologies.</p>
+            <a href="#contact" class="btn btn-gold">More About Me <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="about-cards">
+            <div class="card">
+                <i class="fa-regular fa-lightbulb card-icon"></i>
+                <span class="card-num">01</span>
+                <h3>Creative Design</h3>
+                <p>Bringing ideas to life with modern and minimal design.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-laptop card-icon"></i>
+                <span class="card-num">02</span>
+                <h3>Responsive Development</h3>
+                <p>Build websites that work perfectly on every device.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-user-group card-icon"></i>
+                <span class="card-num">03</span>
+                <h3>User-Focused Experience</h3>
+                <p>Creating meaningful and easy-to-use digital experiences.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Projects -->
+    <section id="skills" class="skills-projects-grid">
+        <div class="skills-box">
+            <span class="sub-title">MY SKILLS</span>
+            <h3>Tools & Technologies I Use</h3>
+            <div class="tools-grid">
+                <div class="tool-item"><i class="fa-brands fa-html5 color-html"></i><span>HTML5</span></div>
+                <div class="tool-item"><i class="fa-brands fa-css3-alt color-css"></i><span>CSS3</span></div>
+                <div class="tool-item"><i class="fa-brands fa-js color-js"></i><span>JavaScript</span></div>
+                <div class="tool-item"><i class="fa-brands fa-bootstrap color-bs"></i><span>Bootstrap</span></div>
+                <div class="tool-item"><i class="fa-solid fa-wind color-tw"></i><span>Tailwind CSS</span></div>
+                <div class="tool-item"><i class="fa-solid fa-mobile-screen color-resp"></i><span>Responsive</span></div>
+                <div class="tool-item"><i class="fa-brands fa-figma color-figma"></i><span>Figma</span></div>
+                <div class="tool-item"><i class="fa-brands fa-github color-github"></i><span>Git & GitHub</span></div>
+            </div>
+        </div>
+
+        <div id="projects" class="projects-box">
+            <div class="section-head">
+                <div>
+                    <span class="sub-title">FEATURED PROJECTS</span>
+                    <h3>Some of My Recent Work</h3>
+                </div>
+                <a href="#projects" class="btn btn-outline btn-sm">View All <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+            <div class="project-cards">
+                <div class="project-card">
+                    <img src="img/flower-shop.jpg" alt="Flower Shop Website">
+                    <h4>Flower Shop Website</h4>
+                    <p>A beautiful flower shop with online booking system.</p>
+                    <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+                    <div class="project-btns">
+                        <a href="#" class="btn btn-gold btn-xs">Live Demo</a>
+                        <a href="#" class="btn btn-outline btn-xs"><i class="fa-brands fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="img/ecommerce.jpg" alt="E-Commerce Website">
+                    <h4>E-Commerce Website</h4>
+                    <p>Modern and responsive e-commerce website.</p>
+                    <div class="tags"><span>HTML</span><span>Tailwind</span><span>JS</span></div>
+                    <div class="project-btns">
+                        <a href="#" class="btn btn-gold btn-xs">Live Demo</a>
+                        <a href="#" class="btn btn-outline btn-xs"><i class="fa-brands fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="img/restaurant.jpg" alt="Restaurant Website">
+                    <h4>Restaurant Website</h4>
+                    <p>A modern restaurant website with menu and booking.</p>
+                    <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+                    <div class="project-btns">
+                        <a href="#" class="btn btn-gold btn-xs">Live Demo</a>
+                        <a href="#" class="btn btn-outline btn-xs"><i class="fa-brands fa-github"></i> GitHub</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer id="contact">
-        <div class="footer-content">
-            <div class="footer-col">
-                <h3>About Us</h3>
-                <p>আমরা রংপুরে সেরা তাজা ও ইম্পোর্টেড ফুলের হোম ডেলিভারি দিয়ে থাকি। বিশেষ দিনের বিশেষ উপহার পাঠাতে কল করুন।</p>
-            </div>
-
-            <div class="footer-col">
-                <h3>Social Media</h3>
-                <a href="https://facebook.com" target="_blank" class="fb-live-btn">
-                    <i class="fab fa-facebook-square"></i> Facebook Live
-                </a>
-            </div>
-
-            <div class="footer-col">
-                <h3>Rangpur Branch</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Rangpur Branch, Bangladesh</p>
-                <p><i class="fas fa-phone-alt"></i> +880 1700-000000</p>
-                <p><i class="fas fa-envelope"></i> info@flowergarden.com</p>
+    <!-- Timeline & Testimonials & Contact -->
+    <section class="triple-grid">
+        <div class="timeline-box">
+            <span class="sub-title">MY JOURNEY</span>
+            <h3>A Simple Timeline</h3>
+            <div class="timeline">
+                <div class="step"><div class="dot"></div><span>2024</span><p>Started learning web development</p></div>
+                <div class="step"><div class="dot"></div><span>2025</span><p>Built multiple web projects</p></div>
+                <div class="step"><div class="dot"></div><span>2026</span><p>Working as Web Designer & Front-End Developer</p></div>
             </div>
         </div>
 
-        <div class="footer-bottom">
-            <p>Designed for Flower Garden Rangpur Branch</p>
+        <div class="testimonial-box card">
+            <span class="sub-title">WHAT CLIENTS SAY</span>
+            <h3>Testimonials</h3>
+            <div class="quote">
+                <i class="fa-solid fa-quote-left quote-icon"></i>
+                <p>Amazing work! The website looks beautiful and works perfectly. Very professional and easy to communicate with.</p>
+                <div class="client-info">
+                    <img src="img/client.jpg" alt="Sarah Ahmed">
+                    <div>
+                        <h4>Sarah Ahmed</h4>
+                        <span>Business Owner</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="contact" class="contact-box">
+            <span class="sub-title">CONTACT ME</span>
+            <h2>Let’s Build Something Great Together</h2>
+            <p>Have a project in mind? Let’s discuss your idea and turn it into a beautiful digital experience.</p>
+            <a href="mailto:contact@example.com" class="btn btn-gold">Get In Touch <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <a href="#home" class="logo">KBN</a>
+                <p>Designed & Developed by Kangkhita Binta Nur<br>© 2026 All Rights Reserved.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-socials">
+                <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="mailto:contact@example.com"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <a href="#home" class="scroll-top"><i class="fa-solid fa-arrow-up"></i><span>Scroll to Top</span></a>
         </div>
     </footer>
 
-    <!-- JS Link matching your VS Code folder structure -->
     <script src="js/script.js"></script>
 </body>
 </html>
